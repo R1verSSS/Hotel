@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отель - Номер Стандарт</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Отель</a>
+      <button class="burger-btn" type="button"><i class="fas fa-bars"></i></button>
+      <button class="theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Тёмная тема">
+        <i class="fas fa-moon"></i>
+      </button>
+      <nav class="nav-menu">
+        <a href="index.html">Номера</a>
+        <a href="index.html#services">Услуги</a>
+        <a href="index.html#about">О нас</a>
+        <a href="index.html#contacts">Контакты</a>
+        <a href="cart.html" class="btn-cart">Бронирование</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="room-page">
+    <div class="container">
+      <div class="room-detail-grid">
+
+        <div class="room-gallery-section">
+          <div class="main-image-container">
+            <img src="images/standard-main.png" alt="Стандарт" class="main-image" id="mainImage">
+          </div>
+          <div class="thumbnails-container">
+            <img src="images/standard-main.png" alt="Фото 1" class="thumbnail active" onclick="changeImage(this)">
+            <img src="images/standard-angle1.png" alt="Фото 2" class="thumbnail" onclick="changeImage(this)">
+            <img src="images/standard-angle2.png" alt="Фото 3" class="thumbnail" onclick="changeImage(this)">
+            <img src="images/standard-bath.png" alt="Фото 4" class="thumbnail" onclick="changeImage(this)">
+          </div>
+        </div>
+
+        <div class="room-info-section">
+          <h1 class="room-detail-title">Стандарт</h1>
+          <p class="room-detail-description">Уютный номер с удобной кроватью и современной мебелью.</p>
+
+          <div class="room-detail-price">
+            <span class="price-value">2500 ₽</span>
+            <span class="price-period">за ночь</span>
+          </div>
+
+          <div class="room-specs">
+            <div class="spec-item">
+              <i class="fas fa-user-friends"></i>
+              <div>
+                <span class="spec-label">Вместимость</span>
+                <span class="spec-value">2 гостя</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-maximize"></i>
+              <div>
+                <span class="spec-label">Площадь</span>
+                <span class="spec-value">25 м²</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="room-amenities">
+            <h3 class="amenities-title">Удобства:</h3>
+            <div class="amenities-grid">
+              <div class="amenity-item"><i class="fas fa-wifi"></i><span>Wi-Fi</span></div>
+              <div class="amenity-item"><i class="fas fa-tv"></i><span>Телевизор</span></div>
+              <div class="amenity-item"><i class="fas fa-wind"></i><span>Кондиционер</span></div>
+              <div class="amenity-item"><i class="fas fa-coffee"></i><span>Мини-бар</span></div>
+            </div>
+          </div>
+
+          <div class="booking-form-card">
+            <h3 class="form-title">Забронировать номер</h3>
+            <div class="form-group">
+              <label class="form-label">Заезд</label>
+              <input type="text" placeholder="дд.мм.гггг" class="form-input check-in" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Выезд</label>
+              <input type="text" placeholder="дд.мм.гггг" class="form-input check-out" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Количество гостей</label>
+              <select class="form-select guests-select">
+                <option value="1" >1 гость</option>
+                <option value="2" selected>2 гостя</option>
+              </select>
+            </div>
+            <div class="booking-live-total" id="booking-live-total">
+              <div class="booking-live-label">Предварительная стоимость</div>
+              <div class="booking-live-price">Выберите даты</div>
+              <div class="booking-live-note">Минимальная стоимость — 1 ночь</div>
+            </div>
+            <button type="button" class="btn-primary btn-full js-add-to-cart">Добавить в бронь</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="similar-rooms-section">
+        <h2 class="section-title">Похожие номера</h2>
+        <div class="rooms-grid">
+          <div class="room-card">
+            <img src="images/lux-main.png" alt="Люкс">
+            <div class="room-info">
+              <h3 class="room-title">Люкс</h3>
+              <div class="room-capacity"><i class="fas fa-user-friends"></i> 2 гостя</div>
+              <div class="room-price">5000 ₽ <span class="price-period">за ночь</span></div>
+              <a href="room1.html" class="room-btn">Подробнее</a>
+            </div>
+          </div>
+
+          <div class="room-card">
+            <img src="images/family-main.png" alt="Семейный">
+            <div class="room-info">
+              <h3 class="room-title">Семейный</h3>
+              <div class="room-capacity"><i class="fas fa-user-friends"></i> 4 гостя</div>
+              <div class="room-price">3500 ₽ <span class="price-period">за ночь</span></div>
+              <a href="room-family.html" class="room-btn">Подробнее</a>
+            </div>
+          </div>
+
+          <div class="room-card">
+            <img src="images/deluxe-main.png" alt="Делюкс">
+            <div class="room-info">
+              <h3 class="room-title">Делюкс</h3>
+              <div class="room-capacity"><i class="fas fa-user-friends"></i> 2 гостя</div>
+              <div class="room-price">7500 ₽ <span class="price-period">за ночь</span></div>
+              <a href="room-deluxe.html" class="room-btn">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Отель</h3>
+        <p>Комфортный отдых по доступным ценам</p>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> г. Казань, ул. Ленина 10</li>
+          <li><i class="fas fa-phone-alt"></i> +7 (843) 123-45-67</li>
+          <li><i class="fas fa-envelope"></i> info@hotel.ru</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Режим работы</h4>
+        <ul>
+          <li><i class="fas fa-clock"></i> Круглосуточный ресепшн</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container"><p>© 2026 Отель. Все права защищены.</p></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

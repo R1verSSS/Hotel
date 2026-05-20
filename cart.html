@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отель — Корзина</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Отель</a>
+      <button class="burger-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Тёмная тема">
+        <i class="fas fa-moon"></i>
+      </button>
+      <nav class="nav-menu">
+        <a href="index.html">Номера</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+        <a href="cart.html" class="btn-cart">Бронирование</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="cart-page">
+    <div class="container">
+      <h1 class="page-title">Ваша бронь</h1>
+      
+      <div class="cart-grid">
+        
+        <!-- Список номеров в корзине (динамический) -->
+        <div class="cart-items" id="cart-items-container">
+          <!-- Здесь JavaScript добавит товары -->
+        </div>
+
+        <!-- Итоговая сумма -->
+        <aside class="cart-summary">
+          <h3 class="cart-summary-title">Итого</h3>
+          
+          <div id="cart-summary-list">
+            <!-- Здесь JavaScript добавит список -->
+          </div>
+          
+          <div class="cart-summary-total">
+            <span>Итого:</span>
+            <span class="total-price" id="total-price">0 ₽</span>
+          </div>
+          
+          <a href="checkout.html" class="btn-primary full-width" id="checkout-btn" style="opacity: 0.5; pointer-events: none;">
+            Оформить бронирование
+          </a>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Отель</h3>
+        <p>Комфортный отдых по доступным ценам</p>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> г. Казань, ул. Ленина 10</li>
+          <li><i class="fas fa-phone-alt"></i> +7 (843) 123-45-67</li>
+          <li><i class="fas fa-envelope"></i> info@hotel.ru</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Режим работы</h4>
+        <ul>
+          <li><i class="fas fa-clock"></i> Круглосуточный ресепшн</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Отель. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
